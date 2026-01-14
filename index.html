@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Максим Назаров — ведущий мероприятий</title>
+  <meta name="description" content="Ведущий свадеб, дней рождения и корпоративов в Москве. Спокойно. Харизматично. С уместным юмором.">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --fg: #f2f2f2;
+      --muted: #9a9a9a;
+      --card: #1a1a1a;
+      --accent: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    a { color: var(--fg); text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('hero.jpg') center/cover no-repeat;
+      display: flex; align-items: center;
+    }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    .hero h1 { font-size: clamp(28px, 5vw, 56px); margin: 0 0 10px; }
+    .hero p { color: var(--muted); max-width: 560px; }
+    .btn {
+      display: inline-block; margin-top: 20px; padding: 14px 22px;
+      border: 1px solid var(--accent); border-radius: 6px;
+      background: transparent; color: var(--fg);
+    }
+
+    section { padding: 80px 0; }
+    h2 { font-size: clamp(22px, 4vw, 36px); margin-bottom: 24px; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 20px; }
+    .card { background: var(--card); padding: 22px; border-radius: 10px; }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; }
+    .gallery img { border-radius: 8px; }
+
+    .video-wrap {
+      position: relative; padding-top: 56.25%;
+      background: #000; border-radius: 12px; overflow: hidden;
+    }
+    .video-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+    }
+
+    .contacts a { display: block; margin-bottom: 10px; }
+
+    footer { padding: 40px 0; color: var(--muted); text-align: center; }
+
+    /* popup */
+    .popup {
+      position: fixed; inset: 0; background: rgba(0,0,0,.7);
+      display: none; align-items: center; justify-content: center; z-index: 1000;
+    }
+    .popup.active { display: flex; }
+    .popup .box {
+      background: var(--card); padding: 24px; border-radius: 12px; width: min(420px, 92%);
+    }
+    input, button {
+      width: 100%; padding: 12px; margin-top: 10px;
+      border-radius: 6px; border: 1px solid #333;
+      background: #0f0f0f; color: var(--fg);
+    }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container hero">
+    <h1>Максим Назаров</h1>
+    <p>Ведущий свадеб, дней рождений и корпоративов в Москве.  
+    Спокойно. Харизматично. С уместным юмором — с уважением к гостям и атмосфере вечера.</p>
+    <a href="#book" class="btn">Узнать, свободна ли дата</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>Формат мероприятий</h2>
+    <div class="cards">
+      <div class="card">Ведущий на свадьбу — интеллигентно и тепло</div>
+      <div class="card">День рождения — живо, без давления</div>
+      <div class="card">Корпоратив — уверенно и по задаче</div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="container">
+    <h2>Узнать, свободна ли дата</h2>
+    <form id="dateForm">
+      <input type="text" id="name" placeholder="Ваше имя" required>
+      <input type="date" id="date" required>
+      <input type="tel" id="phone" placeholder="Телефон" required>
+      <button type="submit">Отправить запрос</button>
+    </form>
+    <p style="color:#9a9a9a;margin-top:10px">Заявка придёт вам в Telegram</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Фото</h2>
+    <div class="gallery">
+      <img src="photo1.jpg">
+      <img src="photo2.jpg">
+      <img src="photo3.jpg">
+      <img src="photo4.jpg">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Промо</h2>
+    <div class="video-wrap">
+      <!-- Вставь ссылку на Reels / YouTube -->
+      <iframe src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container contacts">
+    <h2>Контакты</h2>
+    <a href="tel:+79160302177">📞 8 916 030-21-77</a>
+    <a href="https://wa.me/79160302177">WhatsApp</a>
+    <a href="https://t.me/+79160302177">Telegram</a>
+    <a href="https://instagram.com/maxim_nazarov">Instagram: @maxim_nazarov</a>
+  </div>
+</section>
+
+<footer>
+  © Максим Назаров
+</footer>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="box">
+    <h3>Оставить заявку</h3>
+    <input id="pname" placeholder="Имя">
+    <input id="pphone" placeholder="Телефон">
+    <button onclick="sendPopup()">Отправить</button>
+  </div>
+</div>
+
+<script>
+  // всплывающее окно при скролле
+  let shown = false;
+  window.addEventListener('scroll', () => {
+    if (!shown && window.scrollY > 600) {
+      document.getElementById('popup').classList.add('active');
+      shown = true;
+    }
+  });
+
+  // ЗАГЛУШКА ОТПРАВКИ В TELEGRAM
+  // Я помогу подключить реального Telegram-бота следующим шагом
+  document.getElementById('dateForm').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Заявка отправлена (Telegram подключим на следующем шаге)');
+  });
+
+  function sendPopup() {
+    alert('Заявка отправлена (Telegram подключим)');
+    document.getElementById('popup').classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
